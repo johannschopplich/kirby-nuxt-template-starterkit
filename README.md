@@ -2,24 +2,22 @@
   <img src="https://nuxt-kql.jhnn.dev/logo-shadow.svg" alt="Logo of Kirby Nuxt Starter Kit" width="128" height="128">
 </p>
 
-<h3 align="center">Kirby Nuxt Starter Kit</h3>
+<h3 align="center">Kirby Nuxt Starter Kit (For Templates)</h3>
 
 <p align="center">
-  Kirby's sample site – but rewritten headless with Nuxt 3!<br>
-  <a href="https://kirby-nuxt-starterkit.netlify.app"><strong>Explore the kit live »</strong></a>
+  A fork of the KQL-based starterkit, but using Kirby templates!<br>
 </p>
 
 <br>
 
-# Kirby Nuxt Starterkit
+# Kirby Nuxt Template Starterkit
 
-This repository is a port of the [Kirby Starter Kit](https://github.com/getkirby/starterkit) to Nuxt 3. The content is fetched with the [`nuxt-kql`](https://nuxt-kql.jhnn.dev) module from a [headless Kirby](https://github.com/johannschopplich/kirby-headless-starter) instance.
-
-This is my best practice solution to build a Nuxt 3 based frontend on top of Kirby in headless mode.
+This is a is a port of the [Kirby Nuxt Starter Kit](https://github.com/johannschopplich/kirby-nuxt-starterkit) to use a headless Kirby instance by fetching data from [Kirby templates](https://github.com/johannschopplich/kirby-headless-starter#templates).
 
 ## Key Features
 
-- 🫂 Kirby Query Language with [`nuxt-kql`](https://nuxt-kql.jhnn.dev)
+- 🫂 ~~Kirby Query Language with [`nuxt-kql`](https://nuxt-kql.jhnn.dev)~~
+- 🫂 [Kirby templates](https://github.com/johannschopplich/kirby-headless-starter#templates)
 - 🪁 [Component based Kirby Blocks](./components/Kirby/Block/)
 - 🏛 Global [site data](./plugins/site.ts) similiar to Kirby's `$site`
 - 🗳 [Collections](./composables/collections.ts) for pre-defined queries
@@ -39,6 +37,8 @@ Before getting started, please make sure you have installed the recommended setu
   - Enable [**Take Over Mode**](https://vuejs.org/guide/typescript/overview.html#takeover-mode)
 
 ## Setup
+
+> [📖 Read the documentation](https://nuxt-kql.jhnn.dev)
 
 Make sure to install the dependencies:
 

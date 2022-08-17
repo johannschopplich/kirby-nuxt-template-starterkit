@@ -1,34 +1,13 @@
 <script setup lang="ts">
 const route = useRoute()
-
-const { data } = await useKql({
-  query: `kirby.page("${route.path}")`,
-  select: {
-    id: true,
-    title: true,
-    // description: true,
-    subheading: true,
-    tags: 'page.tags.split(",")',
-    text: 'page.text.toBlocks',
-    published: 'page.date.toDate("c")',
-    cover: {
-      query: 'page.content.cover.toFile',
-      select: ['id', 'url'],
-    },
-    // Required for image blocks and also for the cover fallback
-    images: {
-      query: 'page.images',
-      select: ['id', 'filename', 'url', 'alt'],
-    },
-  },
-})
+const { data } = await useKirbyFetch(route.path)
 
 // Set the current page data for the global page context
-const page = setCurrentPage(() => data.value.result)
+setCurrentPage(() => data.value)
 
 const parentRoute = computed(() => route.path.split('/').slice(0, -1).join('/'))
 const coverUrl = computed(
-  () => page.value?.cover?.url || page.value?.images?.[0]?.url
+  () => data.value?.cover?.url || data.value?.images?.[0]?.url
 )
 
 function formatDateShort(date: Date) {
@@ -48,17 +27,17 @@ function formatDateShort(date: Date) {
 
     <article class="note">
       <header class="note-header h1">
-        <h1 class="note-title">{{ page?.title }}</h1>
-        <p v-if="page?.subheading" class="note-subheading">
-          <small>{{ page?.subheading }}</small>
+        <h1 class="note-title">{{ data?.title }}</h1>
+        <p v-if="data?.subheading" class="note-subheading">
+          <small>{{ data?.subheading }}</small>
         </p>
       </header>
 
-      <KirbyBlocks :blocks="page?.text ?? []" class="note text" />
+      <KirbyBlocks :blocks="data?.text ?? []" class="note text" />
 
       <footer class="note-footer">
-        <ul v-if="page?.tags" class="note-tags">
-          <li v-for="(tag, index) in page.tags" :key="index">
+        <ul v-if="data?.tags" class="note-tags">
+          <li v-for="(tag, index) in data.tags" :key="index">
             <NuxtLink :to="{ path: parentRoute, query: { tag } }">{{
               tag
             }}</NuxtLink>
@@ -66,12 +45,12 @@ function formatDateShort(date: Date) {
         </ul>
 
         <time
-          v-if="page?.published"
+          v-if="data?.published"
           class="note-date"
-          :datetime="page.published"
+          :datetime="data.published"
         >
           Published on
-          {{ formatDateShort(new Date(page.published)) }}
+          {{ formatDateShort(new Date(data.published)) }}
         </time>
       </footer>
 

@@ -1,32 +1,9 @@
 <script setup lang="ts">
 const route = useRoute()
-
-const { data } = await useKql({
-  query: `kirby.page("${route.path}")`,
-  select: {
-    id: true,
-    title: true,
-    // description: true,
-    subheadline: true,
-    text: true,
-    gallery: {
-      query: 'page.images.sortBy("sort", "filename")',
-      select: {
-        resized: {
-          query: 'file.resize(800)',
-          select: ['url'],
-        },
-        width: true,
-        height: true,
-        url: true,
-        alt: true,
-      },
-    },
-  },
-})
+const { data } = await useKirbyFetch(route.path)
 
 // Set the current page data for the global page context
-const page = setCurrentPage(() => data.value.result)
+setCurrentPage(() => data.value)
 </script>
 
 <template>
@@ -35,12 +12,12 @@ const page = setCurrentPage(() => data.value.result)
 
     <div class="grid">
       <div class="column" style="--columns: 4">
-        <div class="text" v-html="page?.text" />
+        <div class="text" v-html="data?.text" />
       </div>
 
       <div class="column" style="--columns: 8">
         <ul class="album-gallery">
-          <li v-for="(image, index) in page?.gallery ?? []" :key="index">
+          <li v-for="(image, index) in data?.gallery ?? []" :key="index">
             <figure
               class="img"
               :style="`

@@ -4,19 +4,8 @@ export default defineNuxtPlugin(async () => {
   const site = useSite()
 
   try {
-    const data = await $kql({
-      query: 'site',
-      select: {
-        title: true,
-        // description: true,
-        children: {
-          query: 'site.children',
-          select: ['id', 'title', 'isListed'],
-        },
-      },
-    })
-
-    site.value = data?.result || {}
+    const { data } = await useKirbyFetch('_site')
+    site.value = data.value || {}
   } catch (e) {
     console.error('Error loading site data:', (e as Error).message)
   }

@@ -1,15 +1,14 @@
 <script setup lang="ts">
 const route = useRoute()
-
-const { data } = await useNotesPage()
+const { data } = await useKirbyFetch(route.path)
 
 // Set the current page data for the global page context
-const page = setCurrentPage(() => data.value.result)
+setCurrentPage(data.value)
 const tag = computed(() => route.query.tag as string)
 
 // Filter page children by tags
 const notes = computed(() => {
-  const children = page.value?.children ?? []
+  const children = data.value?.children ?? []
   if (!tag.value) return children
   return children.filter((page: any) =>
     (page.tags as string[])?.includes(tag.value)

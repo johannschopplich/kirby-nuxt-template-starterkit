@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const page = useCurrentPage()
-const { data } = await useNotesPage()
-const children = computed(() => data.value?.result?.children)
+const { data } = await useKirbyFetch('notes')
+const children = computed(() => data.value?.children)
 
 // Get the next page
 const nextPage = computed(() => {

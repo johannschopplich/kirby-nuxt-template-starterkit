@@ -1,46 +1,11 @@
 <script setup lang="ts">
-const { data } = await useKql({
-  query: 'kirby.page("photography")',
-  select: {
-    title: true,
-    // description: true,
-    subheadline: true,
-    children: {
-      query: 'page.children.listed',
-      select: {
-        id: true,
-        title: true,
-        cover: {
-          query: 'page.content.cover.toFile',
-          select: {
-            cropped: {
-              query: 'file.crop(400, 500)',
-              select: ['url'],
-            },
-            url: true,
-            alt: true,
-          },
-        },
-        image: {
-          query: 'page.images.first',
-          select: {
-            cropped: {
-              query: 'file.crop(400, 500)',
-              select: ['url'],
-            },
-            url: true,
-            alt: true,
-          },
-        },
-      },
-    },
-  },
-})
+const route = useRoute()
+const { data } = await useKirbyFetch(route.path)
 
 // Set the current page data for the global page context
-const page = setCurrentPage(() => data.value.result)
+setCurrentPage(() => data.value)
 
-const albums = computed(() => page.value.children ?? [])
+const albums = computed(() => data.value.children ?? [])
 </script>
 
 <template>
@@ -57,12 +22,7 @@ const albums = computed(() => page.value.children ?? [])
         <NuxtLink :to="`/${album.id}`">
           <figure>
             <span class="img" style="--w: 4; --h: 5">
-              <img
-                :src="
-                  album?.cover?.cropped?.url ?? album?.images?.[0]?.cropped?.url
-                "
-                :alt="album?.cover?.alt ?? album?.images?.[0]?.alt"
-              />
+              <img :src="album?.cover?.url" :alt="album?.cover?.alt" />
             </span>
             <figcaption class="img-caption">
               {{ album.title }}
