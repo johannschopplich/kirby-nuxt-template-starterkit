@@ -3,6 +3,8 @@ import { defineNuxtPlugin } from '#app'
 export default defineNuxtPlugin(async () => {
   const site = useSite()
 
+  if (Object.keys(site.value).length) return
+
   try {
     const { data } = await useKirbyFetch('_site')
     site.value = data.value || {}
