@@ -5,7 +5,7 @@ const { data } = await useKirbyFetch(route.path)
 // Set the current page data for the global page context
 setCurrentPage(() => data.value)
 
-const albums = computed(() => data.value.children ?? [])
+const albums = computed(() => data.value?.children ?? [])
 </script>
 
 <template>

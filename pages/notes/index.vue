@@ -3,7 +3,7 @@ const route = useRoute()
 const { data } = await useKirbyFetch(route.path)
 
 // Set the current page data for the global page context
-setCurrentPage(data.value)
+setCurrentPage(() => data.value)
 const tag = computed(() => route.query.tag as string)
 
 // Filter page children by tags
