@@ -13,7 +13,7 @@ const page = setCurrentPage(() => data.value)
     <aside class="contact">
       <h2 class="h1">Get in contact</h2>
       <div class="grid" style="--gutter: 1.5rem">
-        <section v-internal-links class="column text" style="--columns: 4">
+        <section v-router-links class="column text" style="--columns: 4">
           <h3>Address</h3>
           <div v-html="page.address" />
         </section>

@@ -9,6 +9,6 @@ setCurrentPage(() => data.value)
 <template>
   <article>
     <h1 class="h1">{{ data?.title }}</h1>
-    <div v-internal-links class="text" v-html="data?.text" />
+    <div v-router-links class="text" v-html="data?.text" />
   </article>
 </template>

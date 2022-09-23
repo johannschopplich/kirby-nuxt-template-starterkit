@@ -5,7 +5,7 @@ export default defineNuxtPlugin((nuxtApp) => {
    * Directive to let the Vue Router handle internal links,
    * instead of a hard refresh
    */
-  vueApp.directive('internal-links', {
+  vueApp.directive('router-links', {
     mounted(el) {
       el.addEventListener('click', handleAnchors)
       // window.addEventListener('hashchange', navigate)
