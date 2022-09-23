@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { data } = await useKirbyFetch('home')
+const { data } = await useKirbyData('home')
 
 // Set the current page data for the global page context
 setCurrentPage(() => data.value)

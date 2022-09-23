@@ -4,7 +4,7 @@ export default defineNuxtPlugin(async () => {
   if (Object.keys(site.value).length) return
 
   try {
-    const { data } = await useKirbyFetch('_site')
+    const { data } = await useKirbyData('_site')
     site.value = data.value || {}
   } catch (e) {
     console.error('Error loading site data:', (e as Error).message)
