@@ -1,5 +1,3 @@
-import { createError, defineEventHandler, readBody } from 'h3'
-import { useRuntimeConfig } from '#imports'
 import type { FetchError } from 'ohmyfetch'
 
 export default defineEventHandler(
