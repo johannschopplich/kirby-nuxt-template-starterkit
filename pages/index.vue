@@ -2,7 +2,7 @@
 const { data } = await useKirbyData('home')
 
 // Set the current page data for the global page context
-setCurrentPage(() => data.value)
+setCurrentPage(data)
 
 const albums = computed(() => data.value?.children ?? [])
 </script>
