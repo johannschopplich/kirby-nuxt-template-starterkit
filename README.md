@@ -30,7 +30,7 @@ This is a is a port of the [Kirby Nuxt Starter Kit](https://github.com/johannsch
 
 ### Prerequisites
 
-1. Enable [Corepack](https://github.com/nodejs/corepack) using `corepack enable` (use `npm i -g corepack` for Node.js < 16.10)
+1. Enable [Corepack](https://github.com/nodejs/corepack) using `corepack enable`
 2. Install dependencies using `pnpm install`
 3. Adapt the relevant environment variables:
 
