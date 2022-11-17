@@ -51,7 +51,7 @@ KIRBY_API_TOKEN=
 
 ### Production
 
-Build the application for production with `pnpm build`.
+Build the application for production with `pnpm run build`.
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment).
 
