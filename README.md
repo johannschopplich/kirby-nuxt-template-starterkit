@@ -28,8 +28,6 @@ This is a is a port of the [Kirby Nuxt Starter Kit](https://github.com/johannsch
 
 ## Usage
 
-> [📖 Read the documentation](https://nuxt-kql.jhnn.dev)
-
 ### Prerequisites
 
 1. Enable [Corepack](https://github.com/nodejs/corepack) using `corepack enable` (use `npm i -g corepack` for Node.js < 16.10)
