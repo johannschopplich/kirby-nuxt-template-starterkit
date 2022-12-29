@@ -3,17 +3,15 @@ const route = useRoute()
 const { data } = await useKirbyData(route.path)
 
 // Set the current page data for the global page context
-storePageData(data)
+setPage(data)
 const tag = computed(() => route.query.tag as string)
 
 // Filter page children by tags
-const notes = computed(() => {
-  const children = data.value?.children ?? []
-  if (!tag.value) return children
-  return children.filter((page: any) =>
-    (page.tags as string[])?.includes(tag.value)
+const notes = computed(() =>
+  (data.value?.children ?? []).filter((i: any) =>
+    tag.value ? i.tags?.includes(tag.value) : true
   )
-})
+)
 </script>
 
 <template>

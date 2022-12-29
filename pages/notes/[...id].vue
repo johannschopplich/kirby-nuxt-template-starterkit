@@ -3,7 +3,7 @@ const route = useRoute()
 const { data } = await useKirbyData(route.path)
 
 // Set the current page data for the global page context
-storePageData(data)
+setPage(data)
 
 const parentRoute = computed(() => route.path.split('/').slice(0, -1).join('/'))
 const coverUrl = computed(
