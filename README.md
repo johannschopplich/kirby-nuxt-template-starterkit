@@ -2,7 +2,7 @@
   <img src="https://nuxt-kql.jhnn.dev/logo-shadow.svg" alt="Logo of Kirby Nuxt Starter Kit" width="128" height="128">
 </p>
 
-<h3 align="center">Kirby Nuxt Starter Kit (For Templates)</h3>
+<h3 align="center">Kirby Nuxt Starter Kit (Templates)</h3>
 
 <p align="center">
   A fork of the KQL-based starterkit, but using Kirby templates!<br>
@@ -76,4 +76,4 @@ Data is fetched within Suspense components to ensure pre-rendered state for the 
 
 ## License
 
-[MIT](./LICENSE) License © 2022 [Johann Schopplich](https://github.com/johannschopplich)
+[MIT](./LICENSE) License © 2022-present [Johann Schopplich](https://github.com/johannschopplich)
