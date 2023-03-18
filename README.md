@@ -5,14 +5,14 @@
 <h3 align="center">Kirby Nuxt Starter Kit (With Templates)</h3>
 
 <p align="center">
-  A fork of the KQL-based starterkit, but using Kirby templates!<br>
+  A fork of the KQL-based starterkit, but using Kirby templates<br>
 </p>
 
 <br>
 
 # Kirby Nuxt Template Starterkit
 
-This is a port of the [Kirby Nuxt Starter Kit](https://github.com/johannschopplich/kirby-nuxt-starterkit) to use a headless Kirby instance by fetching data from [Kirby templates](https://github.com/johannschopplich/kirby-headless#templates).
+This is a fork of the [`kirby-nuxt-starterkit`](https://github.com/johannschopplich/kirby-nuxt-starterkit) to use a headless Kirby instance with plain [Kirby templates](https://github.com/johannschopplich/kirby-headless#templates) instead of [KQL](https://github.com/getkirby/kql).
 
 ## Key Features
 
