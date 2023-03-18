@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://nuxt-kql.jhnn.dev/logo-shadow.svg" alt="Logo of Kirby Nuxt Starter Kit" width="128" height="128">
+  <img src="https://nuxt-kql.jhnn.dev/logo-shadow.svg" alt="Kirby Nuxt Template Starter Kit" width="128" height="128">
 </p>
 
-<h3 align="center">Kirby Nuxt Starter Kit (Templates)</h3>
+<h3 align="center">Kirby Nuxt Starter Kit (With Templates)</h3>
 
 <p align="center">
   A fork of the KQL-based starterkit, but using Kirby templates!<br>
@@ -12,16 +12,16 @@
 
 # Kirby Nuxt Template Starterkit
 
-This is a is a port of the [Kirby Nuxt Starter Kit](https://github.com/johannschopplich/kirby-nuxt-starterkit) to use a headless Kirby instance by fetching data from [Kirby templates](https://github.com/johannschopplich/kirby-headless-starter#templates).
+This is a port of the [Kirby Nuxt Starter Kit](https://github.com/johannschopplich/kirby-nuxt-starterkit) to use a headless Kirby instance by fetching data from [Kirby templates](https://github.com/johannschopplich/kirby-headless#templates).
 
 ## Key Features
 
 - 🫂 ~~Kirby Query Language with [`nuxt-kql`](https://nuxt-kql.jhnn.dev)~~
-- 🫂 [Kirby templates](https://github.com/johannschopplich/kirby-headless-starter#templates)
+- 🫂 [Kirby templates](https://github.com/johannschopplich/kirby-headless#templates)
 - 🪁 [Component based Kirby Blocks](./components/Kirby/Block/)
-- 🏛 Global [site data](./plugins/site.ts) similiar to Kirby's `$site`
+- 🏛 Global [site data](./plugins/site.ts) similar to Kirby's `$site`
 - 🗳 [Collections](./composables/collections.ts) for pre-defined queries
-- 🔎 SSR generated SEO meta data
+- 🔎 SSR generated SEO metadata
 - 📐 Prettier & ESLint
 - 🔢 Pre-configured [VSCode settings](./.vscode/settings.json)
 - 🔖 And much more!
