@@ -3,7 +3,7 @@ const route = useRoute()
 const { data } = await useKirbyData(route.path)
 
 // Set the current page data for the global page context
-setPage(data)
+setPage(data.value)
 </script>
 
 <template>

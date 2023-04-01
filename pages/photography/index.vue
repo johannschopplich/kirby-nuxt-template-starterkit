@@ -3,9 +3,7 @@ const route = useRoute()
 const { data } = await useKirbyData(route.path)
 
 // Set the current page data for the global page context
-setPage(data)
-
-const albums = computed(() => data.value?.children ?? [])
+setPage(data.value)
 </script>
 
 <template>
@@ -14,7 +12,7 @@ const albums = computed(() => data.value?.children ?? [])
 
     <ul class="grid" style="--gutter: 1.5rem">
       <li
-        v-for="(album, index) in albums"
+        v-for="(album, index) in data?.children ?? []"
         :key="index"
         class="column"
         style="--columns: 3"

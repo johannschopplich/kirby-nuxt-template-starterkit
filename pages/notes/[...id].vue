@@ -3,12 +3,10 @@ const route = useRoute()
 const { data } = await useKirbyData(route.path)
 
 // Set the current page data for the global page context
-setPage(data)
+setPage(data.value)
 
 const parentRoute = computed(() => route.path.split('/').slice(0, -1).join('/'))
-const coverUrl = computed(
-  () => data.value?.cover?.url || data.value?.images?.[0]?.url
-)
+const coverUrl = data.value?.cover?.url || data.value?.images?.[0]?.url
 
 function formatDateShort(date: Date) {
   return new Intl.DateTimeFormat('en-US', {

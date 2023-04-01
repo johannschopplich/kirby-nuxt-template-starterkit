@@ -3,7 +3,8 @@ const route = useRoute()
 const { data } = await useKirbyData(route.path)
 
 // Set the current page data for the global page context
-setPage(data)
+setPage(data.value)
+
 const tag = computed(() => route.query.tag as string)
 
 // Filter page children by tags

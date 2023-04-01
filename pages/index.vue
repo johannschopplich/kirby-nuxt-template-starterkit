@@ -2,9 +2,7 @@
 const { data } = await useKirbyData('home')
 
 // Set the current page data for the global page context
-setPage(data)
-
-const albums = computed(() => data.value?.children ?? [])
+setPage(data.value)
 </script>
 
 <template>
@@ -12,7 +10,7 @@ const albums = computed(() => data.value?.children ?? [])
     <AppIntro />
 
     <ul class="home-grid">
-      <li v-for="(album, index) in albums" :key="index">
+      <li v-for="(album, index) in data?.children ?? []" :key="index">
         <NuxtLink :to="`/${album.id}`">
           <figure>
             <img :src="album?.cover?.url" :alt="album?.cover?.alt" />
