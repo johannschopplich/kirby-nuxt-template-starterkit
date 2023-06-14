@@ -11,7 +11,12 @@ export function usePage<T extends Record<string, any> = Record<string, any>>() {
  * Sets the currently active page and updates the document head
  */
 export function setPage<T extends Record<string, any>>(page?: T) {
-  if (!page) return
+  const pageState = usePageState()
+
+  if (!page) {
+    pageState.value = 'rejected'
+    return
+  }
 
   usePage().value = page
 
@@ -27,6 +32,9 @@ export function setPage<T extends Record<string, any>>(page?: T) {
   // Write the meta tags to the document head
   useHead({
     title,
+    bodyAttrs: {
+      'data-template': page.intendedTemplate || 'default',
+    },
     meta: [
       { name: 'description', content: description },
       { property: 'og:title', content: title },
@@ -41,26 +49,24 @@ export function setPage<T extends Record<string, any>>(page?: T) {
     link: [{ rel: 'canonical', href: url }],
   })
 
-  usePageState().value = 'ready'
+  pageState.value = 'resolved'
 }
 
 /**
- * Returns a promise that resolves when the page data has been loaded
+ * Returns a promise that resolves when the page data has been loaded or rejected
  */
 export async function hasPage() {
   const state = usePageState()
-  if (state.value === 'ready') return true
 
-  await until(state).toBe('ready')
+  await until(state).not.toBe('pending')
   await nextTick()
-  return true
+
+  return state.value === 'resolved'
 }
 
-/**
- * Alias for `hasPage()`
- */
-export const isPageReady = hasPage
-
 function usePageState() {
-  return useState('app.state.page', () => 'pending')
+  return useState<'pending' | 'resolved' | 'rejected'>(
+    'app.state.page',
+    () => 'pending'
+  )
 }
