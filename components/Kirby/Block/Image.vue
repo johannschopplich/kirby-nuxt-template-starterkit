@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { KirbyBlock } from 'kirby-fest'
+import type { KirbyBlock } from '#nuxt-kql'
 
 interface KirbyImage {
   id: string
@@ -16,7 +16,7 @@ const page = usePage()
 
 // Explicitly not using `computed` here
 const image = page.value?.images?.find(
-  ({ uuid }: KirbyImage) => uuid === props.block.content.image?.[0]
+  ({ uuid }: KirbyImage) => uuid === props.block.content.image?.[0],
 )
 
 const ratio = props.block.content.ratio || 'auto'
