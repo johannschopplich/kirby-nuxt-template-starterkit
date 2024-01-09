@@ -36,9 +36,9 @@ function formatDateShort(date: Date) {
       <footer class="note-footer">
         <ul v-if="data?.tags" class="note-tags">
           <li v-for="(tag, index) in data.tags" :key="index">
-            <NuxtLink :to="{ path: parentRoute, query: { tag } }">{{
-              tag
-            }}</NuxtLink>
+            <NuxtLink :to="{ path: parentRoute, query: { tag } }">
+              {{ tag }}
+            </NuxtLink>
           </li>
         </ul>
 
