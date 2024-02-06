@@ -18,10 +18,6 @@ export default defineNuxtConfig({
     },
   },
 
-  experimental: {
-    typescriptBundlerResolution: true,
-  },
-
   typescript: {
     // Recommended: type check in dev and on build
     // typeCheck: true,
