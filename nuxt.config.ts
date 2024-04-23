@@ -17,10 +17,4 @@ export default defineNuxtConfig({
       routes: ['/'],
     },
   },
-
-  typescript: {
-    // Recommended: type check in dev and on build
-    // typeCheck: true,
-    shim: false,
-  },
 })

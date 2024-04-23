@@ -47,9 +47,6 @@ KIRBY_API_TOKEN=
 1. Start the development server using `pnpm run dev`
 2. Visit [localhost:3000](http://localhost:3000/)
 
-> [!NOTE]
-> Enable [Take Over Mode](https://vuejs.org/guide/typescript/overview.html#takeover-mode) in Visual Studio Code.
-
 ### Production
 
 Build the application for production with `pnpm run build`.
@@ -72,7 +69,7 @@ Data is fetched within Suspense components to ensure pre-rendered state for the 
 - **[Forum](https://forum.getkirby.com)** – Whenever you get stuck, don't hesitate to reach out for questions and support.
 - **[Discord](https://chat.getkirby.com)** – Hang out and meet the community.
 - **[YouTube](https://youtube.com/kirbyCasts)** - Watch the latest video tutorials visually with Bastian.
-- **[Twitter](https://twitter.com/getkirby)** – Spread the word.
+- **[Mastodon](https://mastodon.social/@getkirby)** – Spread the word.
 - **[Instagram](https://www.instagram.com/getkirby/)** – Share your creations: #madewithkirby.
 
 ## License
