@@ -4,6 +4,9 @@ const { data } = await useKirbyData(route.path)
 
 // Set the current page data for the global page context
 setPage(data.value)
+
+const content = ref<HTMLElement | undefined>()
+useInternalLinks(content)
 </script>
 
 <template>
@@ -12,8 +15,8 @@ setPage(data.value)
 
     <aside class="contact">
       <h2 class="h1">Get in contact</h2>
-      <div class="grid" style="--gutter: 1.5rem">
-        <section v-router-links class="column text" style="--columns: 4">
+      <div ref="content" class="grid" style="--gutter: 1.5rem">
+        <section class="column text" style="--columns: 4">
           <h3>Address</h3>
           <div v-html="data.address" />
         </section>
