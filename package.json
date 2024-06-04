@@ -2,7 +2,7 @@
   "name": "kirby-nuxt-template-starterkit",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@8.15.7",
+  "packageManager": "pnpm@9.1.4",
   "scripts": {
     "dev": "nuxi dev",
     "build": "nuxi build",
@@ -11,27 +11,19 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier \"**/*.{css,html,json,md,ts,tsx,vue,yml}\" --write",
-    "prepare": "simple-git-hooks && nuxi prepare"
+    "prepare": "nuxi prepare"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.15.0",
+    "@antfu/eslint-config": "^2.20.0",
     "@sindresorhus/slugify": "^2.2.1",
-    "@types/node": "^20.12.7",
-    "@vueuse/nuxt": "^10.9.0",
-    "eslint": "^8.57.0",
-    "lint-staged": "^15.2.2",
+    "@types/node": "^20.14.1",
+    "@vueuse/nuxt": "^10.10.0",
+    "eslint": "^9.4.0",
     "medium-zoom": "^1.1.0",
     "nuxt": "^3.11.2",
-    "nuxt-kql": "^1.4.15",
-    "prettier": "^3.2.5",
-    "simple-git-hooks": "^2.11.1",
+    "nuxt-kql": "^1.4.17",
+    "prettier": "^3.3.0",
     "typescript": "^5.4.5",
-    "vue-tsc": "^2.0.14"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "npx lint-staged"
-  },
-  "lint-staged": {
-    "**/*.{ts,vue}": "eslint --cache"
+    "vue-tsc": "^2.0.19"
   }
 }
