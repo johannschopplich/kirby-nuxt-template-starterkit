@@ -1,5 +1,5 @@
-import type { FetchError } from 'ofetch'
 import type { KirbyApiResponse } from '#nuxt-kql'
+import type { FetchError } from 'ofetch'
 
 export default defineNuxtPlugin(async () => {
   const site = useSite()
